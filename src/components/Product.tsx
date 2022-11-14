@@ -14,7 +14,7 @@ type ProductProps = {
 
 export default function Product({ product }: ProductProps) {
   return (
-    <li className='flex-1 border rounded-2xl mx-3 grow'>
+    <li className='border rounded-2xl'>
       <div className='flex justify-center items-center h-80'>
         <img
           className='max-w-[50%] max-h-[50%]'
