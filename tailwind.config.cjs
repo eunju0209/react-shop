@@ -9,6 +9,7 @@ module.exports = {
       },
       maxHeight: {
         '1/2': '50%',
+        '700px': '700px',
       },
     },
   },

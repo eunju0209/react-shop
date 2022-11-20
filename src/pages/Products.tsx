@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Product, { ProductType } from '../components/Product';
+import { IoIosArrowForward } from 'react-icons/io';
 
 type ProductListProps = {
   category: string;
@@ -20,8 +21,14 @@ export default function Products({ category, title, slice }: ProductListProps) {
   const filtered = getFilteredItems(products, category, slice);
 
   return (
-    <section className='px-14'>
-      <h1 className='text-4xl font-bold mt-16 mb-7 text-center'>{title}</h1>
+    <section className='py-6 px-12 mb-20'>
+      {!slice && (
+        <span className='text-sm flex items-center'>
+          홈<IoIosArrowForward className='mx-2 text-gray-400' />
+          {title}
+        </span>
+      )}
+      <h1 className='text-4xl font-bold mb-8 text-center'>{title}</h1>
       <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list'>
         {filtered.map((product) => (
           <Product key={product.id} product={product} />
