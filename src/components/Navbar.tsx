@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { HiOutlineMoon, HiOutlineShoppingBag } from 'react-icons/hi';
+import { themeChange } from 'theme-change';
 
 export default function Navbar() {
   return (
