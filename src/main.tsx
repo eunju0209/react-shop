@@ -6,6 +6,7 @@ import './index.css';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import ProductDetail from './pages/ProductDetail';
 import Products from './pages/Products';
 
 const router = createBrowserRouter([
@@ -17,17 +18,18 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       {
         path: '/fashion',
-        element: <Products category='fashion' title='패션' />,
+        element: <Products category='fashion' pageTitle='패션' />,
       },
       {
         path: '/accessory',
-        element: <Products category='jewelery' title='액세서리' />,
+        element: <Products category='jewelery' pageTitle='액세서리' />,
       },
       {
         path: '/digital',
-        element: <Products category='electronics' title='디지털' />,
+        element: <Products category='electronics' pageTitle='디지털' />,
       },
       { path: '/cart', element: <Cart /> },
+      { path: '/product/:id', element: <ProductDetail /> },
     ],
   },
 ]);

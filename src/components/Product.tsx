@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 export type ProductType = {
   category: string;
   description: string;
@@ -10,11 +12,19 @@ export type ProductType = {
 
 type ProductProps = {
   product: ProductType;
+  pageTitle: string;
 };
 
-export default function Product({ product }: ProductProps) {
+export default function Product({ product, pageTitle }: ProductProps) {
+  const navigate = useNavigate();
+
   return (
-    <li className='border rounded-2xl'>
+    <li
+      onClick={() =>
+        navigate(`/product/${product.id}`, { state: { product, pageTitle } })
+      }
+      className='border rounded-2xl'
+    >
       <div className='flex justify-center items-center h-80'>
         <img
           className='max-w-[50%] max-h-[50%]'

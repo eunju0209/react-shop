@@ -4,11 +4,15 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 type ProductListProps = {
   category: string;
-  title: string;
+  pageTitle: string;
   slice?: boolean;
 };
 
-export default function Products({ category, title, slice }: ProductListProps) {
+export default function Products({
+  category,
+  pageTitle,
+  slice,
+}: ProductListProps) {
   const [products, setProducts] = useState<ProductType[]>([]);
 
   useEffect(() => {
@@ -25,13 +29,13 @@ export default function Products({ category, title, slice }: ProductListProps) {
       {!slice && (
         <span className='text-sm flex items-center'>
           홈<IoIosArrowForward className='mx-2 text-gray-400' />
-          {title}
+          {pageTitle}
         </span>
       )}
-      <h1 className='text-4xl font-bold mb-8 text-center'>{title}</h1>
+      <h1 className='text-4xl font-bold mb-8 text-center'>{pageTitle}</h1>
       <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list'>
         {filtered.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product key={product.id} product={product} pageTitle={pageTitle} />
         ))}
       </ul>
     </section>

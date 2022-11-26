@@ -12,22 +12,22 @@ export default function Footer() {
       </a>
       <ul className='flex gap-2 my-10'>
         <li>
-          <img src='./images/payment/visa.svg' alt='visa' />
+          <img src='../images/payment/visa.svg' alt='visa' />
         </li>
         <li>
-          <img src='./images/payment/master.svg' alt='master' />
+          <img src='../images/payment/master.svg' alt='master' />
         </li>
         <li>
-          <img src='./images/payment/american.svg' alt='american' />
+          <img src='../images/payment/american.svg' alt='american' />
         </li>
         <li>
-          <img src='./images/payment/paypal.svg' alt='paypal' />
+          <img src='../images/payment/paypal.svg' alt='paypal' />
         </li>
         <li>
-          <img src='./images/payment/diners.svg' alt='diners' />
+          <img src='../images/payment/diners.svg' alt='diners' />
         </li>
         <li>
-          <img src='./images/payment/discover.svg' alt='discover' />
+          <img src='../images/payment/discover.svg' alt='discover' />
         </li>
       </ul>
       <div className='flex gap-4 mb-10'>
