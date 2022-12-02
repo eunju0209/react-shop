@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
 import StarRating from '../components/StarRating';
 import { ProductType } from '../components/Product';
+import { useAddCarts } from '../context/CartContext';
 
 type LocationState = {
   state: {
@@ -12,12 +13,12 @@ type LocationState = {
 
 export default function ProductDetail() {
   const navigate = useNavigate();
+  const addCarts = useAddCarts();
   const {
-    state: {
-      product: { category, image, title, description, rating, price, id },
-      pageTitle,
-    },
+    state: { product, pageTitle },
   } = useLocation() as LocationState;
+
+  const { category, image, title, description, rating, price, id } = product;
 
   return (
     <section>
@@ -46,9 +47,14 @@ export default function ProductDetail() {
           </div>
           <h3 className='text-3xl mb-5'>${Math.round(price)}</h3>
           <div>
-            <button className='btn btn-primary mr-3'>장바구니에 담기</button>
             <button
-              onClick={() => navigate('/carts')}
+              className='btn btn-primary mr-3'
+              onClick={() => addCarts({ id, image, title, price, quantity: 1 })}
+            >
+              장바구니에 담기
+            </button>
+            <button
+              onClick={() => navigate('/cart')}
               className='btn btn-outline'
             >
               장바구니로 이동

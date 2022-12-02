@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { HiOutlineMoon, HiOutlineShoppingBag } from 'react-icons/hi';
-import { themeChange } from 'theme-change';
+import { useCarts } from '../context/CartContext';
 
 export default function Navbar() {
+  const carts = useCarts();
+
   return (
     <header className='flex justify-between w-full shadow-lg py-2 px-10'>
       <div className='flex gap-8 items-center'>
@@ -15,7 +17,7 @@ export default function Navbar() {
           <Link to='/digital'>디지털</Link>
         </nav>
       </div>
-      <div className='flex'>
+      <div className='flex items-center'>
         <button className='text-3xl'>
           <HiOutlineMoon />
         </button>
@@ -26,9 +28,12 @@ export default function Navbar() {
             placeholder='검색'
           />
         </form>
-        <button className='text-2xl'>
+        <Link to='cart' className='text-3xl relative'>
           <HiOutlineShoppingBag />
-        </button>
+          <span className='absolute -top-2.5 -right-2.5 text-xs w-6 h-6 bg-red-500 rounded-full text-white font-bold flex items-center justify-center'>
+            {carts.length}
+          </span>
+        </Link>
       </div>
     </header>
   );
