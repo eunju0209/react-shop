@@ -21,7 +21,7 @@ export default function Slider() {
             </h1>
             <p className='text-white mb-3'>{banner.description}</p>
             <button
-              className='flex items-center text-sm font-bold px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-all'
+              className='flex items-center btn'
               onClick={() => navigate(banner.link)}
             >
               바로가기

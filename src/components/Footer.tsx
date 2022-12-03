@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaGithub } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className='w-full flex flex-col items-center py-10 bg-gray-50'>
+    <footer className='w-full flex flex-col items-center py-10 bg-gray-50 dark:bg-slate-800'>
       <a
         className='text-sm hover:underline'
         href='https://zero-base.co.kr/'

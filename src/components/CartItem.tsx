@@ -14,10 +14,10 @@ export default function CartItem({ cart }: CartItemProps) {
   const { id, image, title, price, quantity } = cart;
   return (
     <li className='flex justify-between items-center w-full'>
-      <div className='basis-1/6 p-10 mr-8'>
+      <div className='basis-3/12 py-5 px-10 mr-12 bg-white rounded-2xl'>
         <img src={image} alt={title} />
       </div>
-      <div className='basis-4/6'>
+      <div className='basis-9/12'>
         <h2 className='text-xl font-bold mb-3'>{title}</h2>
         <h3 className='text-3xl mb-5'>${Math.ceil(price)}</h3>
         <div className='btn-group'>

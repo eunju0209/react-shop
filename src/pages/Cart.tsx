@@ -16,14 +16,14 @@ export default function Cart() {
       </p>
       <div className='flex justify-center items-start my-10'>
         {carts.length < 1 ? (
-          <div className='w-full px-10'>
+          <div className='w-full px-12'>
             <p className='text-2xl mb-8'>장바구니에 물품이 없습니다.</p>
             <button className='btn btn-primary' onClick={() => navigate('/')}>
               담으러 가기
             </button>
           </div>
         ) : (
-          <ul className='w-full px-10'>
+          <ul className='w-full px-12'>
             {carts.map((cart) => (
               <CartItem key={cart.id} cart={cart} />
             ))}
