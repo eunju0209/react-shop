@@ -8,6 +8,7 @@ import { useCarts } from '../context/CartContext';
 import { themeChange } from 'theme-change';
 import { useEffect } from 'react';
 import { useDarkMode, useToggleDarkMode } from '../context/DarkModeContext';
+import Search from './Search';
 
 export default function Navbar() {
   const carts = useCarts();
@@ -38,13 +39,7 @@ export default function Navbar() {
           {!darkMode && <HiOutlineMoon />}
           {darkMode && <HiOutlineSun />}
         </button>
-        <form className='mx-5'>
-          <input
-            className='py-3 px-4 outline-none bg-gray-300 rounded-md'
-            type='text'
-            placeholder='검색'
-          />
-        </form>
+        <Search />
         <Link to='cart' className='text-3xl relative dark:text-white'>
           <HiOutlineShoppingBag />
           <span className='absolute -top-2.5 -right-2.5 text-xs w-6 h-6 bg-red-500 rounded-full text-white font-bold flex items-center justify-center'>

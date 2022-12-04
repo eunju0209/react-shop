@@ -7,7 +7,6 @@ import { useAddCarts } from '../context/CartContext';
 type LocationState = {
   state: {
     product: ProductType;
-    pageTitle: string;
   };
 };
 
@@ -15,10 +14,23 @@ export default function ProductDetail() {
   const navigate = useNavigate();
   const addCarts = useAddCarts();
   const {
-    state: { product, pageTitle },
+    state: { product },
   } = useLocation() as LocationState;
 
   const { category, image, title, description, rating, price, id } = product;
+
+  let pageTitle;
+  switch (category) {
+    case `men's clothing` || `women's clothing`:
+      pageTitle = '패션';
+      break;
+    case 'jewelery':
+      pageTitle = '액세서리';
+      break;
+    case 'electronics':
+      pageTitle = '디지털';
+      break;
+  }
 
   return (
     <section>

@@ -15,14 +15,12 @@ type ProductProps = {
   pageTitle: string;
 };
 
-export default function Product({ product, pageTitle }: ProductProps) {
+export default function Product({ product }: ProductProps) {
   const navigate = useNavigate();
 
   return (
     <li
-      onClick={() =>
-        navigate(`/product/${product.id}`, { state: { product, pageTitle } })
-      }
+      onClick={() => navigate(`/product/${product.id}`, { state: { product } })}
       className='group border rounded-2xl overflow-hidden dark:border-gray-800 hover:cursor-pointer'
     >
       <div className='flex justify-center items-center h-80 bg-white'>
