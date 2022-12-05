@@ -9,7 +9,7 @@ export default function Cart() {
   const carts = useCarts();
 
   return (
-    <section className='w-full'>
+    <section className='w-full max-w-screen-2xl mx-auto'>
       <Breadcrumbs text1='홈' text2='장바구니' />
       <div className='flex justify-center items-start my-10 flex-col lg:flex-row'>
         {carts.length < 1 ? (

@@ -33,7 +33,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <section>
+    <section className='max-w-screen-2xl mx-auto'>
       <Breadcrumbs text1={pageTitle ? pageTitle : ''} text2={title} />
       <section className='flex items-center p-10 px-10 flex-col lg:flex-row'>
         <div className='basis-1/5 px-10 py-5 bg-white rounded-2xl mb-8 max-w-xs'>

@@ -25,10 +25,10 @@ export default function Products({
   const filtered = getFilteredItems(products, category, slice);
 
   return (
-    <section className='py-6 px-3 lg:px-12 mb-20'>
+    <section className='py-6 px-3 lg:px-12 mb-20 max-w-screen-2xl mx-auto'>
       {!slice && <Breadcrumbs text1='홈' text2={pageTitle} />}
       <h1 className='text-4xl font-bold mb-8 text-center'>{pageTitle}</h1>
-      <ul className='grid gap-2 grid-cols-2 lg:grid-cols-4 item_list'>
+      <ul className='grid gap-2 lg:gap-8 grid-cols-2 lg:grid-cols-4 item_list'>
         {filtered.map((product) => (
           <Product key={product.id} product={product} pageTitle={pageTitle} />
         ))}
