@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { IoIosArrowForward } from 'react-icons/io';
 import StarRating from '../components/StarRating';
 import { ProductType } from '../components/Product';
 import { useAddCarts } from '../context/CartContext';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 type LocationState = {
   state: {
@@ -34,16 +34,12 @@ export default function ProductDetail() {
 
   return (
     <section>
-      <p className='flex items-center mt-8 px-8 text-sm'>
-        {pageTitle}
-        <IoIosArrowForward className='mx-2 text-gray-400' />
-        {title}
-      </p>
-      <section className='flex items-center p-10 px-10'>
-        <div className='basis-1/5 px-10 py-5 bg-white rounded-2xl'>
+      <Breadcrumbs text1={pageTitle ? pageTitle : ''} text2={title} />
+      <section className='flex items-center p-10 px-10 flex-col lg:flex-row'>
+        <div className='basis-1/5 px-10 py-5 bg-white rounded-2xl mb-8 max-w-xs'>
           <img src={image} alt={title} />
         </div>
-        <div className='basis-4/5 p-8 ml-10'>
+        <div className='basis-4/5 lg:p-8 lg:ml-10'>
           <h2 className='text-xl font-bold mb-2'>
             {title}
             <span className='text-sm ml-4 bg-teal-400 text-white py-0.5 px-2.5 rounded-full'>

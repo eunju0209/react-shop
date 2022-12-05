@@ -31,7 +31,9 @@ export default function Product({ product }: ProductProps) {
         />
       </div>
       <div className='flex flex-col justify-center bg-slate-100 px-8 h-40 dark:bg-gray-700'>
-        <h3 className='text-md font-bold mb-5'>{product.title}</h3>
+        <h3 className='text-md font-bold mb-5 truncate lg:overflow-visible lg:whitespace-pre-line'>
+          {product.title}
+        </h3>
         <span className='text-md'>${product.price}</span>
       </div>
     </li>

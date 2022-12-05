@@ -14,14 +14,14 @@ export default function Slider() {
       dynamicHeight={false}
     >
       {banners.map((banner, index) => (
-        <div key={index} className='max-h-700px relative'>
-          <div className='absolute top-1/2 left-20 text-left -translate-y-1/2'>
-            <h1 className='text-4xl text-white font-bold mb-2'>
+        <div key={index} className='max-h-56 lg:max-h-700px relative'>
+          <div className='absolute top-1/2 left-8 lg:left-20 text-left -translate-y-1/2'>
+            <h1 className='text-2xl lg:text-4xl text-white font-bold mb-2'>
               {banner.tiitle}
             </h1>
             <p className='text-white mb-3'>{banner.description}</p>
             <button
-              className='flex items-center btn'
+              className='flex items-center btn btn-sm lg:btn-md'
               onClick={() => navigate(banner.link)}
             >
               바로가기

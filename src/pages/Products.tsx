@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Product, { ProductType } from '../components/Product';
-import { IoIosArrowForward } from 'react-icons/io';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 type ProductListProps = {
   category: string;
@@ -25,15 +25,10 @@ export default function Products({
   const filtered = getFilteredItems(products, category, slice);
 
   return (
-    <section className='py-6 px-12 mb-20'>
-      {!slice && (
-        <span className='text-sm flex items-center'>
-          홈<IoIosArrowForward className='mx-2 text-gray-400' />
-          {pageTitle}
-        </span>
-      )}
+    <section className='py-6 px-3 lg:px-12 mb-20'>
+      {!slice && <Breadcrumbs text1='홈' text2={pageTitle} />}
       <h1 className='text-4xl font-bold mb-8 text-center'>{pageTitle}</h1>
-      <ul className='grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list'>
+      <ul className='grid gap-2 grid-cols-2 lg:grid-cols-4 item_list'>
         {filtered.map((product) => (
           <Product key={product.id} product={product} pageTitle={pageTitle} />
         ))}

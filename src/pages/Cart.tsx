@@ -1,8 +1,8 @@
 import CartItem from '../components/CartItem';
 import { useCarts } from '../context/CartContext';
-import { IoIosArrowForward } from 'react-icons/io';
 import Popup from '../components/Popup';
 import { useNavigate } from 'react-router-dom';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Cart() {
   const navigate = useNavigate();
@@ -10,11 +10,8 @@ export default function Cart() {
 
   return (
     <section className='w-full'>
-      <p className='flex items-center mt-8 px-8 text-sm'>
-        홈 <IoIosArrowForward className='mx-2 text-gray-400' />
-        장바구니
-      </p>
-      <div className='flex justify-center items-start my-10'>
+      <Breadcrumbs text1='홈' text2='장바구니' />
+      <div className='flex justify-center items-start my-10 flex-col lg:flex-row'>
         {carts.length < 1 ? (
           <div className='w-full px-12'>
             <p className='text-2xl mb-8'>장바구니에 물품이 없습니다.</p>
@@ -29,7 +26,7 @@ export default function Cart() {
             ))}
           </ul>
         )}
-        <div className='basis-1/5 flex items-center mt-8'>
+        <div className='basis-1/5 flex items-center mt-8 ml-8'>
           <span className='text-2xl mr-3'>
             총 : ${' '}
             {carts.reduce(
