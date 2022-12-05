@@ -19,6 +19,7 @@ function App() {
             type='checkbox'
             className='drawer-toggle'
             checked={isChecked}
+            readOnly
           />
           <div className='drawer-content flex flex-col'>
             <Navbar handleOpenMenu={handleOpenMenu} />
